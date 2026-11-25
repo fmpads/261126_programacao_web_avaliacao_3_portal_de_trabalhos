@@ -1,8 +1,13 @@
 # 26/11/2026 - FACULDADE MUNICIPAL DE PALHOÇA
+
 # TURMA 93. ADS - MAT (2026/2)
+
 # TECNOLÓGICO EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS
+
 # PROGRAMAÇÃO WEB
+
 # DOCENTE: LEANDRO PICKLER
+
 # DISCENTE: JEAN DOUGLAS TOLEDO RODRIGUES JUNIOR (suporte@jeandouglas.com.br)
 
 # AVALIAÇÃO 3 - SISTEMA DE CANDIDATURA A VAGAS DE TRABALHO
@@ -122,7 +127,6 @@ Depois, acesse `http://localhost:8000` no navegador.
 - **Validação de entradas:** verifica os dados enviados pelos usuários.
 - **Restrições de envio:** limita tipos e tamanhos de arquivos.
 - **Prevenção contra SQL injection:** utiliza parâmetros e escape adequados.
-- **Proteção contra XSS:** faz o escape das entradas exibidas.
 
 ## Contato
 
