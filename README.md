@@ -1,14 +1,19 @@
-# Sistema de candidatura a vagas
+# 26/11/2026 - FACULDADE MUNICIPAL DE PALHOÇA
+# TURMA 93. ADS - MAT (2026/2)
+# TECNOLÓGICO EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS
+# PROGRAMAÇÃO WEB
+# DOCENTE: LEANDRO PICKLER
+# DISCENTE: JEAN DOUGLAS TOLEDO RODRIGUES JUNIOR (suporte@jeandouglas.com.br)
 
-Um sistema web de candidatura a vagas que permite às empresas criar formulários e aos candidatos se candidatarem online. O sistema oferece perguntas dinâmicas, envio de currículo e notificações por e-mail.
+# AVALIAÇÃO 3 - SISTEMA DE CANDIDATURA A VAGAS DE TRABALHO
+
+Um sistema web de candidatura a vagas de trabalho que permite aos usuários criar formulários e aos candidatos se candidatarem online. O sistema oferece perguntas dinâmicas e envio de currículo.
 
 ## Recursos
 
 - Crie e gerencie formulários de candidatura dinamicamente.
 - Suporte a diferentes tipos de pergunta: texto, área de texto, envio de arquivo, número e seleção.
 - Envio de currículo com restrições de tamanho.
-- Exibição do logotipo da empresa no formulário de candidatura.
-- Notificações automáticas por e-mail, opcionais.
 - Estrutura de banco de dados segura e otimizada.
 - Interface responsiva baseada em Bootstrap.
 
@@ -27,8 +32,7 @@ Um sistema web de candidatura a vagas que permite às empresas criar formulário
 #### Passo 1: Clonar o repositório
 
 ```sh
-git clone https://github.com/seu-repositorio/sistema-candidatura-vagas.git
-cd sistema-candidatura-vagas
+git clone https://github.com/fmpads/261126_programacao_web_avaliacao_3_portal_de_trabalhos
 ```
 
 #### Passo 2: Criar o banco de dados
@@ -37,10 +41,10 @@ cd sistema-candidatura-vagas
 2. Execute:
 
 ```sql
-CREATE DATABASE job_application;
+CREATE DATABASE portaldetrabalhos;
 ```
 
-3. Importe o arquivo `database/job_portal.sql` fornecido no projeto.
+3. Importe o arquivo `database/portaldetrabalhos.sql` fornecido no projeto.
 
 #### Passo 3: Configurar a conexão
 
@@ -123,5 +127,5 @@ Depois, acesse `http://localhost:8000` no navegador.
 ## Contato
 
 Para questões e suporte, contate:
-📧 Email: `seu-email@exemplo.com`
-🌍 Site: `seusite.com`
+Email: `suporte@jeandouglas.com.br`
+Site: `https://jeandouglas.com.br`
