@@ -15,11 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $safe_email = $conn->real_escape_string($email);
     $safe_mobile = $conn->real_escape_string($mobile);
 
-    $check = $conn->query("SELECT id FROM users WHERE email='$safe_email'");
+    $check = $conn->query("SELECT id FROM useers WHERE email='$safe_email'");
     if ($check->num_rows > 0) {
         $error = "Este e-mail já está cadastrado.";
     } else {
-        $query = "INSERT INTO users (name, username, email, mobile, password, role) VALUES ('$safe_name', '$safe_email', '$safe_email', '$safe_mobile', '$password', 'user')";
+        $query = "INSERT INTO useers (name, username, email, mobile, password, role) VALUES ('$safe_name', '$safe_email', '$safe_email', '$safe_mobile', '$password', 'user')";
         if ($conn->query($query)) {
             $_SESSION['logged_in'] = true;
             $_SESSION['userid'] = $conn->insert_id;

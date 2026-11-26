@@ -3,7 +3,7 @@ include "./include/header.php";
 
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
-    $conn->query("DELETE FROM users WHERE id = $id");
+    $conn->query("DELETE FROM useers WHERE id = $id");
     echo "<script>window.location='users_list.php';</script>";
 }
 
@@ -17,12 +17,12 @@ if (!empty($search)) {
     $where .= " AND name LIKE '%$search%'";
 }
 
-$total_query = "SELECT COUNT(*) AS total FROM users $where";
+$total_query = "SELECT COUNT(*) AS total FROM useers $where";
 $total_result = $conn->query($total_query);
 $total_users = $total_result->fetch_assoc()['total'];
 $total_pages = ceil($total_users / $limit);
 
-$query = "SELECT * FROM users $where ORDER BY id DESC LIMIT $limit OFFSET $offset";
+$query = "SELECT * FROM useers $where ORDER BY id DESC LIMIT $limit OFFSET $offset";
 $result = $conn->query($query);
 ?>
 

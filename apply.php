@@ -15,7 +15,7 @@ if (empty($_SESSION['logged_in'])) {
 }
 
 $questions = $conn->query("SELECT * FROM job_questions WHERE form_id = $form_id");
-$user = $conn->query("SELECT * FROM users WHERE id=" . intval($_SESSION['userid']))->fetch_assoc();
+$user = $conn->query("SELECT * FROM useers WHERE id=" . intval($_SESSION['userid']))->fetch_assoc();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim($_POST['name']);

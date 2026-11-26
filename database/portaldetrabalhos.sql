@@ -48,7 +48,7 @@ CREATE TABLE `job_responses` (
   `status` enum('Pending','Reviewed','Hired') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE `users` (
+CREATE TABLE `useers` (
   `id` int(11) NOT NULL,
   `username` varchar(100) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `users` (
   `role` enum('admin','user') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO `users` (`id`, `username`, `name`, `email`, `password`, `mobile`, `role`) VALUES
+INSERT INTO `useers` (`id`, `username`, `name`, `email`, `password`, `mobile`, `role`) VALUES
 (1, 'admin', 'Jean Douglas', 'suporte@jeandouglas.com.br', '$2y$10$ql0q3i2b/wvs3gEogJPg9.A4H2tOg.7ZPnQQoqEVMhoLN8571qTdG', '48999563416', 'admin');
 
 ALTER TABLE `job_answers`
@@ -73,14 +73,14 @@ ALTER TABLE `job_applications`
 ALTER TABLE `job_forms` ADD PRIMARY KEY (`id`);
 ALTER TABLE `job_questions` ADD PRIMARY KEY (`id`), ADD KEY `form_id` (`form_id`);
 ALTER TABLE `job_responses` ADD PRIMARY KEY (`id`), ADD KEY `form_id` (`form_id`);
-ALTER TABLE `users` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `username` (`username`);
+ALTER TABLE `useers` ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `username` (`username`);
 
 ALTER TABLE `job_answers` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 ALTER TABLE `job_applications` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 ALTER TABLE `job_forms` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 ALTER TABLE `job_questions` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 ALTER TABLE `job_responses` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
-ALTER TABLE `users` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `useers` MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 ALTER TABLE `job_answers`
   ADD CONSTRAINT `job_answers_ibfk_1` FOREIGN KEY (`response_id`) REFERENCES `job_applications` (`id`) ON DELETE CASCADE,

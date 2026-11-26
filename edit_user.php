@@ -1,7 +1,7 @@
 <?php
 include "./include/header.php";
 $id = $_GET['id'];
-$user = $conn->query("SELECT * FROM users WHERE id=$id")->fetch_assoc();
+$user = $conn->query("SELECT * FROM useers WHERE id=$id")->fetch_assoc();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
@@ -11,9 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!empty($password)) {
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $update_query = "UPDATE users SET name='$name', email='$email', mobile='$mobile', password='$hashed_password' WHERE id=$id";
+        $update_query = "UPDATE useers SET name='$name', email='$email', mobile='$mobile', password='$hashed_password' WHERE id=$id";
     } else {
-        $update_query = "UPDATE users SET name='$name', email='$email', mobile='$mobile' WHERE id=$id";
+        $update_query = "UPDATE useers SET name='$name', email='$email', mobile='$mobile' WHERE id=$id";
     }
 
     if ($conn->query($update_query)) {

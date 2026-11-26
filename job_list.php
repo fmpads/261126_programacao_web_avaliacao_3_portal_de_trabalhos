@@ -16,7 +16,7 @@ $total = $conn->query("SELECT COUNT(*) AS total FROM job_forms jf $where")->fetc
 $total_pages = max(1, ceil($total / $limit));
 $page = min($page, $total_pages);
 $offset = ($page - 1) * $limit;
-$forms = $conn->query("SELECT jf.*, u.email AS author_email, (SELECT COUNT(*) FROM job_applications ja WHERE ja.form_id = jf.id) AS total_candidaturas FROM job_forms jf JOIN users u ON u.id = jf.user_id $where ORDER BY jf.created_at DESC LIMIT $limit OFFSET $offset");
+$forms = $conn->query("SELECT jf.*, u.email AS author_email, (SELECT COUNT(*) FROM job_applications ja WHERE ja.form_id = jf.id) AS total_candidaturas FROM job_forms jf JOIN useers u ON u.id = jf.user_id $where ORDER BY jf.created_at DESC LIMIT $limit OFFSET $offset");
 
 if (isset($_GET['ajax']) && $_GET['ajax'] == '1') {
     $html = '';
